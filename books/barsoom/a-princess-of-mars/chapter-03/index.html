@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Princess of Mars — Chapter III</title>
+<style>
+:root {
+  --ink: #14110e;
+  --paper: #f7f1e4;
+  --cap: #e8b86a;
+  --gutter: 8px;
+  --name: #8b3a1a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #1b1612;
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Gill Sans", "Century Gothic", sans-serif;
+}
+.stage { max-width: 820px; margin: 0 auto; padding: 24px 12px 64px; }
+.page {
+  background: #fff;
+  padding: 14px 14px 18px;
+  margin: 0 0 28px;
+  box-shadow: 0 18px 50px #0008;
+}
+.running {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 11px;
+  margin: 0 0 8px;
+  color: #333;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--gutter);
+  align-items: stretch;
+}
+.panel {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid var(--ink);
+  background: #fff;
+  min-width: 0;
+  min-height: 0;
+}
+.art {
+  position: relative;
+  background: #0d0b09;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+.art img {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  object-position: center 22%;
+  display: block;
+}
+.wide .art img { min-height: 248px; object-position: center 40%; }
+.leap .art img { min-height: 280px; object-position: center 12%; }
+.span2 { grid-column: span 2; }
+.span3 { grid-column: 1 / -1; }
+.cap {
+  position: absolute;
+  top: 8px; left: 8px;
+  background: var(--cap);
+  border: 2px solid var(--ink);
+  padding: 3px 8px 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 12.5px;
+  line-height: 1.25;
+  z-index: 3;
+  max-width: 62%;
+}
+.sfx {
+  position: absolute;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+  font-size: 48px;
+  line-height: .9;
+  color: #fff;
+  -webkit-text-stroke: 5px var(--ink);
+  paint-order: stroke fill;
+  transform: rotate(-9deg);
+  z-index: 5;
+  pointer-events: none;
+  letter-spacing: .02em;
+}
+.sfx.mid { left: 16%; top: 42%; }
+.sfx.low { left: 10%; bottom: 16%; font-size: 56px; }
+.talk {
+  flex: 0 0 auto;
+  background: #fff;
+  border-top: 2px solid var(--ink);
+  padding: 7px 9px 8px;
+  font-size: 13.5px;
+  line-height: 1.28;
+  font-weight: 700;
+}
+.talk p { margin: 0 0 6px; }
+.talk p:last-child { margin: 0; }
+.talk a { color: var(--name); }
+.talk b {
+  display: block;
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--name);
+  font-weight: 800;
+  margin: 0 0 1px;
+}
+.pageno {
+  text-align: center;
+  font-weight: 800;
+  font-size: 13px;
+  margin-top: 8px;
+  letter-spacing: .16em;
+}
+.cover { padding: 0; background: var(--paper); }
+.cover img { width: 100%; height: auto; display: block; }
+.intro {
+  padding: 18px 22px 8px;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.intro h1 { font-weight: 400; font-size: 1.7rem; margin: 0 0 .2rem; }
+.intro p { margin: 0 0 .8rem; color: #444; }
+.intro a { color: #8b3a1a; }
+.site-nav {
+  font: 800 11px/1.3 "Trebuchet MS", "Gill Sans", sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 8px 2px 10px;
+  color: #c9b48a;
+}
+.site-nav a { color: #e8b86a; text-decoration: none; border-bottom: 1px solid #a07d32; }
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .span2, .span3 { grid-column: 1 / -1; }
+  .art img { min-height: 170px; }
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<nav class="site-nav"><a href="/">Comix</a> · <a href="/books/barsoom/">Barsoom</a> · A Princess of Mars · Chapter III</nav>
+
+<article class="page cover" id="cover">
+  <img src="panels/00-cover.jpg" alt="A Princess of Mars, Chapter III">
+  <div class="intro">
+    <h1>Chapter III · My Advent on Mars</h1>
+    <p>A ten-page digest of Edgar Rice Burroughs, 1912. The moss, the eggs, the leap, the armlet. Speech under the pictures; the sound stays in the frame. Text from <a href="https://gutenberg.org/cache/epub/62/pg62-images.html#chap03">Project Gutenberg #62</a>.</p>
+  </div>
+</article>
+
+<article class="page" id="p1">
+  <div class="running"><span>A Princess of Mars</span><span>I Knew That I Was on Mars</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p1-01.jpg" alt="">
+        <div class="cap">A circular basin. Midday.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> I opened my eyes upon a strange and weird landscape. I knew that I was on Mars; not once did I question either my sanity or my wakefulness.</p></figcaption>
+    </figure>
+    <figure class="panel span3">
+      <div class="art"><img src="panels/p1-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> Yellowish, mosslike vegetation stretching for interminable miles. Quartz-bearing rock glistened. A little to my left, a low walled enclosure.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">1</div>
+</article>
+
+<article class="page" id="p2">
+  <div class="running"><span>A Princess of Mars</span><span>The First Surprise</span></div>
+  <div class="grid">
+    <figure class="panel span2">
+      <div class="art">
+        <img src="panels/p2-01.jpg" alt="">
+        <div class="sfx mid">WHOOSH!</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> Springing to my feet I received my first Martian surprise. The effort carried me into the air to the height of about three yards.</p></figcaption>
+    </figure>
+    <figure class="panel">
+      <div class="art">
+        <img src="panels/p2-02.jpg" alt="">
+        <div class="sfx low">THUD!</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> My attempts to walk resulted in hops that landed me sprawling upon my face or back.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">2</div>
+</article>
+
+<article class="page" id="p3">
+  <div class="running"><span>A Princess of Mars</span><span>First Principles</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p3-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> I hit upon the unique plan of reverting to first principles in locomotion, creeping. I reached the low, encircling wall.</p></figcaption>
+    </figure>
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p3-02.jpg" alt="">
+        <div class="cap">The enclosure. Four feet high.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> I cautiously gained my feet and peered over the top upon the strangest sight it had ever been given me to see.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">3</div>
+</article>
+
+<article class="page" id="p4">
+  <div class="running"><span>A Princess of Mars</span><span>The Eggs</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p4-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> The roof was of solid glass. Beneath this were several hundred large eggs, perfectly round and snowy white — about two and one-half feet in diameter.</p></figcaption>
+    </figure>
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p4-02.jpg" alt="">
+        <div class="cap">Five or six already hatched.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> They seemed mostly head, with little scrawny bodies, long necks and six legs — or two legs and two arms, with an intermediary pair.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">4</div>
+</article>
+
+<article class="page" id="p5">
+  <div class="running"><span>A Princess of Mars</span><span>The Rattle</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p5-01.jpg" alt="">
+        <div class="sfx mid">RATTLE!</div>
+        <div class="cap">Not ten feet from my breast.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> I failed to note the approach of a score of full-grown Martians. The rattling of the accouterments of the foremost warrior warned me.</p></figcaption>
+    </figure>
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p5-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> His mount towered ten feet at the shoulder; had four legs on either side; a gaping mouth which split its head from snout to neck.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">5</div>
+</article>
+
+<article class="page" id="p6">
+  <div class="running"><span>A Princess of Mars</span><span>Hurdling</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide leap">
+      <div class="art">
+        <img src="panels/p6-01.jpg" alt="">
+        <div class="sfx mid">WHOOSH!</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> Unarmed as I was, I gave a superhuman leap. It carried me fully thirty feet into the air and landed me a hundred feet from my pursuers.</p></figcaption>
+    </figure>
+    <figure class="panel span3">
+      <div class="art"><img src="panels/p6-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> They were satisfying themselves that I had not molested their young. The thing which weighed most in my favor was my exhibition of hurdling.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">6</div>
+</article>
+
+<article class="page" id="p7">
+  <div class="running"><span>A Princess of Mars</span><span>Overtures of Peace</span></div>
+  <div class="grid">
+    <figure class="panel">
+      <div class="art"><img src="panels/p7-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> He dismounted, threw down his spear, and came toward me. He unclasped an enormous metal armlet.</p></figcaption>
+    </figure>
+    <figure class="panel span2">
+      <div class="art"><img src="panels/p7-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> He addressed me in a clear, resonant voice, in a language I could not understand. I placed my hand over my heart and bowed.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">7</div>
+</article>
+
+<article class="page" id="p8">
+  <div class="running"><span>A Princess of Mars</span><span>The Armlet</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p8-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> I took the armlet from his open palm, clasping it about my arm above the elbow; smiled at him and stood waiting. His wide mouth spread into an answering smile.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">8</div>
+</article>
+
+<article class="page" id="p9">
+  <div class="running"><span>A Princess of Mars</span><span>The Cavalcade</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p9-01.jpg" alt="">
+        <div class="cap">Toward the hills.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> The fellow designated reached down two or three hands and lifted me up behind him. I hung on as best I could by the belts and straps.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">9</div>
+</article>
+
+<article class="page" id="p10">
+  <div class="running"><span>A Princess of Mars</span><span>To Be Continued</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p9-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> The entire cavalcade then turned and galloped away toward the range of hills in the distance.</p></figcaption>
+    </figure>
+    <figure class="panel span3">
+      <div class="art"><img src="panels/p10-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Next</b> Chapter IV — A Prisoner.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">10</div>
+</article>
+
+<p class="site-nav"><a href="/books/barsoom/a-princess-of-mars/chapter-02/">Chapter II</a> · <a href="/books/barsoom/a-princess-of-mars/">A Princess of Mars</a> · Chapter IV next</p>
+
+</div>
+</body>
+</html>
