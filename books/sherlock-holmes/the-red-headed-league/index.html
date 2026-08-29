@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Red-Headed League — a comic digest</title>
+<style>
+:root {
+  --ink: #14110e;
+  --paper: #f7f1e4;
+  --cap: #f0c94a;
+  --gutter: 8px;
+  --name: #6b1c22;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #1b1612;
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Gill Sans", "Century Gothic", sans-serif;
+}
+.stage { max-width: 820px; margin: 0 auto; padding: 24px 12px 64px; }
+.page {
+  background: #fff;
+  padding: 14px 14px 18px;
+  margin: 0 0 28px;
+  box-shadow: 0 18px 50px #0008;
+}
+.running {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 11px;
+  margin: 0 0 8px;
+  color: #333;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--gutter);
+  align-items: stretch;
+}
+.panel {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid var(--ink);
+  background: #fff;
+  min-width: 0;
+  min-height: 0;
+}
+.art {
+  position: relative;
+  background: #0d0b09;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+.art img {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  object-position: center 22%;
+  display: block;
+}
+.wide .art img { min-height: 248px; object-position: center 40%; }
+.span2 { grid-column: span 2; }
+.span3 { grid-column: 1 / -1; }
+.cap {
+  position: absolute;
+  top: 8px; left: 8px;
+  background: var(--cap);
+  border: 2px solid var(--ink);
+  padding: 3px 8px 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 12.5px;
+  line-height: 1.25;
+  z-index: 3;
+  max-width: 62%;
+}
+.sfx {
+  position: absolute;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+  font-size: 48px;
+  line-height: .9;
+  color: #fff;
+  -webkit-text-stroke: 5px var(--ink);
+  paint-order: stroke fill;
+  transform: rotate(-9deg);
+  z-index: 5;
+  pointer-events: none;
+  letter-spacing: .02em;
+}
+.sfx.mid { left: 16%; top: 42%; }
+.sfx.low { left: 10%; bottom: 16%; font-size: 56px; }
+.talk {
+  flex: 0 0 auto;
+  background: #fff;
+  border-top: 2px solid var(--ink);
+  padding: 7px 9px 8px;
+  font-size: 13.5px;
+  line-height: 1.28;
+  font-weight: 700;
+}
+.talk p { margin: 0 0 6px; }
+.talk p:last-child { margin: 0; }
+.talk b {
+  display: block;
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--name);
+  font-weight: 800;
+  margin: 0 0 1px;
+}
+.pageno {
+  text-align: center;
+  font-weight: 800;
+  font-size: 13px;
+  margin-top: 8px;
+  letter-spacing: .16em;
+}
+.letter {
+  background: #f4e4c4;
+  border: 3px solid var(--ink);
+  padding: 14px 16px 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.letter h3 {
+  margin: 0 0 .5rem;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.letter p { margin: 0 0 .55rem; }
+.letter .sign { text-align: right; font-style: italic; margin: 0; }
+.cover { padding: 0; background: var(--paper); }
+.cover img { width: 100%; height: auto; display: block; }
+.intro {
+  padding: 18px 22px 8px;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.intro h1 { font-weight: 400; font-size: 1.7rem; margin: 0 0 .2rem; }
+.intro p { margin: 0 0 .8rem; color: #444; }
+nav.toc {
+  display: flex; gap: .85rem; flex-wrap: wrap;
+  font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+}
+nav.toc a { color: #6b1c22; }
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .span2, .span3 { grid-column: 1 / -1; }
+  .art img { min-height: 170px; }
+}
+
+.site-nav {
+  font: 800 11px/1.3 "Trebuchet MS", "Gill Sans", sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 8px 2px 10px;
+  color: #c9b48a;
+}
+.site-nav a { color: #f0c94a; text-decoration: none; border-bottom: 1px solid #a07d32; }
+</style>
+</head>
+<body>
+<div class="stage">
+<nav class="site-nav"><a href="/">Comix</a> · <a href="/books/sherlock-holmes/">Sherlock Holmes</a> · The Red-Headed League</nav>
+
+
+<article class="page cover" id="cover">
+  <img src="panels/00-cover.jpg" alt="The Red-Headed League">
+  <div class="intro">
+    <h1>The Red-Headed League</h1>
+    <p>An eight-page digest after Arthur Conan Doyle. Place and time sit on the picture; speech sits under it.</p>
+    <nav class="toc">
+      <a href="#p1">1 The Client</a>
+      <a href="#p2">2 The League</a>
+      <a href="#p3">3 Dissolved</a>
+      <a href="#p4">4 Saxe-Coburg Square</a>
+      <a href="#p5">5 Saturday Night</a>
+      <a href="#p6">6 The Vault</a>
+      <a href="#p7">7 John Clay</a>
+      <a href="#p8">8 The Benefactor</a>
+    </nav>
+  </div>
+</article>
+
+<article class="page" id="p1">
+  <div class="running"><span>The Red-Headed League</span><span>The Client</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p1-01.jpg" alt="">
+        <div class="cap">221B Baker Street. Autumn.</div>
+      </div>
+      <figcaption class="talk"><p><b>Holmes</b> You could not possibly have come at a better time, my dear Watson.</p></figcaption>
+    </figure>
+    <figure class="panel">
+      <div class="art"><img src="panels/p1-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> Manual labour. Snuff. A Freemason. China. And a good deal of writing lately.</p></figcaption>
+    </figure>
+    <figure class="panel span2">
+      <div class="art"><img src="panels/p1-03.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Wilson</b> How, in the name of good-fortune, did you know all that?</p></figcaption>
+    </figure>
+    <div class="letter span3">
+      <h3>The Morning Chronicle · 27 April 1890</h3>
+      <p>TO THE RED-HEADED LEAGUE: On account of the bequest of the late Ezekiah Hopkins, of Lebanon, Pennsylvania, U.S.A., there is now another vacancy open which entitles a member of the League to a salary of £4 a week for purely nominal services. All red-headed men who are sound in body and mind and above the age of twenty-one years, are eligible. Apply in person on Monday, at eleven o’clock, to Duncan Ross, at the offices of the League, 7 Pope’s Court, Fleet Street.</p>
+    </div>
+  </div>
+  <div class="pageno">1</div>
+</article>
+
+<article class="page" id="p2">
+  <div class="running"><span>The Red-Headed League</span><span>The League</span></div>
+  <div class="grid">
+    <figure class="panel">
+      <div class="art"><img src="panels/p2-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Wilson</b> Never was such a fellow for photography. Then diving down into the cellar like a rabbit.</p></figcaption>
+    </figure>
+    <figure class="panel span2">
+      <div class="art"><img src="panels/p2-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Spaulding</b> I wish to the Lord, Mr Wilson, that I was a red-headed man.</p></figcaption>
+    </figure>
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p2-03.jpg" alt="">
+        <div class="cap">7 Pope’s Court, Fleet Street.</div>
+      </div>
+      <figcaption class="talk"><p><b>Ross</b> This is Mr Wilson, I presume. You are one of those whom we are so anxious to meet.</p></figcaption>
+    </figure>
+    <figure class="panel span3">
+      <div class="art"><img src="panels/p2-04.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Ross</b> You will copy the Encyclopædia Britannica. Four hours a day. Four pounds a week.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">2</div>
+</article>
+
+<article class="page" id="p3">
+  <div class="running"><span>The Red-Headed League</span><span>Dissolved</span></div>
+  <div class="grid">
+    <figure class="panel span2">
+      <div class="art">
+        <img src="panels/p3-01.jpg" alt="">
+        <div class="cap">9 October 1890.</div>
+      </div>
+      <figcaption class="talk"><p><b>Wilson</b> The door was locked. This was tacked upon the panel.</p></figcaption>
+    </figure>
+    <div class="letter">
+      <h3>A card</h3>
+      <p>THE RED-HEADED LEAGUE IS DISSOLVED.</p>
+      <p class="sign">October 9, 1890.</p>
+    </div>
+    <figure class="panel span2">
+      <div class="art"><img src="panels/p3-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> And now, Mr Wilson, as to your assistant — this Vincent Spaulding.</p></figcaption>
+    </figure>
+    <figure class="panel">
+      <div class="art"><img src="panels/p3-03.jpg" alt=""></div>
+      <figcaption class="talk">
+        <p><b>Wilson</b> A white splash of acid upon his forehead.</p>
+        <p><b>Holmes</b> Have you ever observed that his ears are pierced?</p>
+      </figcaption>
+    </figure>
+  </div>
+  <div class="pageno">3</div>
+</article>
+
+<article class="page" id="p4">
+  <div class="running"><span>The Red-Headed League</span><span>Saxe-Coburg Square</span></div>
+  <div class="grid">
+    <figure class="panel span2">
+      <div class="art">
+        <img src="panels/p4-01.jpg" alt="">
+        <div class="cap">Saxe-Coburg Square.</div>
+      </div>
+      <figcaption class="talk"><p><b>Holmes</b> Thank you. I only wished to ask you how you would go from here to the Strand.</p></figcaption>
+    </figure>
+    <figure class="panel">
+      <div class="art"><img src="panels/p4-03.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> It is the City and Suburban Bank. That is enough.</p></figcaption>
+    </figure>
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p4-02.jpg" alt="">
+        <div class="sfx mid">THUD!</div>
+      </div>
+      <figcaption class="talk"><p><b>Watson</b> Why were you so wanting to know the name of those shops?</p></figcaption>
+    </figure>
+    <figure class="panel span3">
+      <div class="art">
+        <img src="panels/p4-04.jpg" alt="">
+        <div class="cap">St. James’s Hall.</div>
+      </div>
+      <figcaption class="talk"><p><b>Holmes</b> We are at the end of our tangled skein, Watson. Now for the concert.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">4</div>
+</article>
+
+<article class="page" id="p5">
+  <div class="running"><span>The Red-Headed League</span><span>Saturday Night</span></div>
+  <div class="grid">
+    <figure class="panel span3">
+      <div class="art"><img src="panels/p5-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> The method is obvious. A dummy league, a cellar, and a tunnel into the bank next door.</p></figcaption>
+    </figure>
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p5-02.jpg" alt="">
+        <div class="cap">Ten o’clock.</div>
+      </div>
+      <figcaption class="talk"><p><b>Holmes</b> This is Mr Merryweather of the City and Suburban Bank. And Jones of Scotland Yard.</p></figcaption>
+    </figure>
+    <figure class="panel">
+      <div class="art"><img src="panels/p5-03.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Merryweather</b> I really feel as if I should be better in bed.</p></figcaption>
+    </figure>
+    <figure class="panel span2">
+      <div class="art"><img src="panels/p5-04.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Merryweather</b> There are thirty thousand Napoleons from the Bank of France in those crates.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">5</div>
+</article>
+
+<article class="page" id="p6">
+  <div class="running"><span>The Red-Headed League</span><span>The Vault</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p6-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> We must sit in the dark. And we must be silent.</p></figcaption>
+    </figure>
+    <figure class="panel span2">
+      <div class="art">
+        <img src="panels/p6-02.jpg" alt="">
+        <div class="sfx mid">CREAK!</div>
+      </div>
+      <figcaption class="talk"><p><b>Holmes</b> It’s no use, John Clay. You have no chance at all.</p></figcaption>
+    </figure>
+    <figure class="panel">
+      <div class="art">
+        <img src="panels/p6-03.jpg" alt="">
+        <div class="sfx low">SNAP!</div>
+      </div>
+      <figcaption class="talk"><p><b>Clay</b> I beg that you will not touch me with your filthy hands.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">6</div>
+</article>
+
+<article class="page" id="p7">
+  <div class="running"><span>The Red-Headed League</span><span>John Clay</span></div>
+  <div class="grid">
+    <figure class="panel span2">
+      <div class="art"><img src="panels/p7-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Clay</b> I have royal blood in my veins. Have the goodness, when you address me always, to say ‘sir’ and ‘please’.</p></figcaption>
+    </figure>
+    <figure class="panel">
+      <div class="art"><img src="panels/p7-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> John Clay, the murderer, thief, smasher, and forger. He’s a young man, Mr Merryweather, but he is at the head of his profession.</p></figcaption>
+    </figure>
+    <figure class="panel span3">
+      <div class="art"><img src="panels/p6-03.jpg" alt=""></div>
+      <figcaption class="talk">
+        <p><b>Jones</b> You’ll see your pal again presently.</p>
+        <p><b>Clay</b> He’ll be all right. I’ll see to that.</p>
+      </figcaption>
+    </figure>
+  </div>
+  <div class="pageno">7</div>
+</article>
+
+<article class="page" id="p8">
+  <div class="running"><span>The Red-Headed League</span><span>The Benefactor</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p8-01.jpg" alt="">
+        <div class="cap">Baker Street. Dawn.</div>
+      </div>
+      <figcaption class="talk"><p><b>Watson</b> You reasoned it out beautifully. It is so long a chain, and yet every link rings true.</p></figcaption>
+    </figure>
+    <figure class="panel span2">
+      <div class="art"><img src="panels/p5-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> The assistant’s knees. The pavement. Saturday, when the bank is shut till Monday. They needed Wilson out of the way — so they invented a league.</p></figcaption>
+    </figure>
+    <figure class="panel">
+      <div class="art"><img src="panels/p8-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> It saved me from ennui. <em>L’homme c’est rien — l’œuvre c’est tout.</em></p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">8</div>
+</article>
+
+</div>
+</body>
+</html>

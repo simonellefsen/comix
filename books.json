@@ -1,0 +1,24 @@
+{
+  "books": [
+    {
+      "id": "sherlock-holmes",
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "path": "/books/sherlock-holmes/",
+      "stories": [
+        {
+          "id": "a-scandal-in-bohemia",
+          "title": "A Scandal in Bohemia",
+          "pages": 8,
+          "path": "/books/sherlock-holmes/a-scandal-in-bohemia/"
+        },
+        {
+          "id": "the-red-headed-league",
+          "title": "The Red-Headed League",
+          "pages": 8,
+          "path": "/books/sherlock-holmes/the-red-headed-league/"
+        }
+      ]
+    }
+  ]
+}

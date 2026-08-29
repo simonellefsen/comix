@@ -1,0 +1,121 @@
+:root {
+  --ink: #1c1610;
+  --paper: #f4e6c8;
+  --muted: #5c4e3d;
+  --oxblood: #6b1c22;
+  --gold: #a07d32;
+  --prussian: #1c3554;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: radial-gradient(1200px 600px at 50% 0%, #3a2c22 0%, #1a1410 55%, #0e0b09 100%);
+  color: var(--ink);
+  font-family: Palatino, "Palatino Linotype", "Iowan Old Style", "Times New Roman", serif;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+.wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 28px 18px 64px;
+}
+.sheet {
+  background: var(--paper);
+  box-shadow: 0 0 0 1px #0008, 0 30px 80px #000a;
+  padding: 2.2rem 2.4rem 3rem;
+}
+.kicker {
+  font-variant: small-caps;
+  letter-spacing: .28em;
+  color: var(--oxblood);
+  font-size: .82rem;
+  margin: 0 0 .35rem;
+}
+h1 {
+  font-weight: 400;
+  font-size: 2.4rem;
+  margin: 0 0 .35rem;
+  letter-spacing: .02em;
+}
+.lede {
+  color: var(--muted);
+  font-style: italic;
+  margin: 0 0 1.6rem;
+  max-width: 38rem;
+}
+.rule {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 1.6rem 0;
+}
+h2 {
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  color: var(--prussian);
+  margin: 0 0 1rem;
+}
+.crumbs {
+  font-size: .92rem;
+  margin: 0 0 1.2rem;
+}
+.crumbs a { color: var(--oxblood); }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.1rem;
+}
+.card {
+  display: block;
+  background: #efe0bc;
+  border: 1px solid #c9b48a;
+  color: inherit;
+  text-decoration: none;
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  background: #1c1610;
+}
+.card .meta { padding: .7rem .8rem .9rem; }
+.card strong {
+  display: block;
+  font-variant: small-caps;
+  letter-spacing: .08em;
+  color: var(--prussian);
+}
+.card span {
+  display: block;
+  color: var(--muted);
+  font-size: .9rem;
+  margin-top: .2rem;
+}
+.card.ghost {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-style: italic;
+  border-style: dashed;
+}
+.book-head { margin-bottom: 1.2rem; }
+.book-head p { margin: .3rem 0 0; color: var(--muted); }
+footer {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: .9rem;
+}
+a { color: var(--oxblood); }
+@media (max-width: 640px) {
+  .sheet { padding: 1.4rem 1.1rem 2.2rem; }
+  h1 { font-size: 1.8rem; }
+  .card img { height: 200px; }
+}

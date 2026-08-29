@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Scandal in Bohemia — a comic digest</title>
+<style>
+:root {
+  --ink: #14110e;
+  --paper: #f7f1e4;
+  --cap: #f0c94a;
+  --gutter: 8px;
+  --name: #6b1c22;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #1b1612;
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Gill Sans", "Century Gothic", sans-serif;
+}
+.stage { max-width: 820px; margin: 0 auto; padding: 24px 12px 64px; }
+.page {
+  background: #fff;
+  padding: 14px 14px 18px;
+  margin: 0 0 28px;
+  box-shadow: 0 18px 50px #0008;
+}
+.running {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 11px;
+  margin: 0 0 8px;
+  color: #333;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--gutter);
+  align-items: stretch;
+}
+.panel {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid var(--ink);
+  background: #fff;
+  min-width: 0;
+  min-height: 0;
+}
+.art {
+  position: relative;
+  background: #0d0b09;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+.art img {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  object-position: center 22%;
+  display: block;
+}
+.wide .art img { min-height: 248px; object-position: center 40%; }
+.span2 { grid-column: span 2; }
+.span3 { grid-column: 1 / -1; }
+.cap {
+  position: absolute;
+  top: 8px; left: 8px;
+  background: var(--cap);
+  border: 2px solid var(--ink);
+  padding: 3px 8px 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 12.5px;
+  line-height: 1.25;
+  z-index: 3;
+  max-width: 62%;
+}
+.sfx {
+  position: absolute;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+  font-size: 48px;
+  line-height: .9;
+  color: #fff;
+  -webkit-text-stroke: 5px var(--ink);
+  paint-order: stroke fill;
+  transform: rotate(-9deg);
+  z-index: 5;
+  pointer-events: none;
+  letter-spacing: .02em;
+}
+.sfx.mid { left: 16%; top: 42%; }
+.sfx.fire { left: 8%; top: 38%; font-size: 56px; }
+.sfx.low { left: 10%; bottom: 16%; font-size: 56px; }
+.talk {
+  flex: 0 0 auto;
+  background: #fff;
+  border-top: 2px solid var(--ink);
+  padding: 7px 9px 8px;
+  font-size: 13.5px;
+  line-height: 1.28;
+  font-weight: 700;
+}
+.talk p { margin: 0 0 6px; }
+.talk p:last-child { margin: 0; }
+.talk b {
+  display: block;
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--name);
+  font-weight: 800;
+  margin: 0 0 1px;
+}
+.pageno {
+  text-align: center;
+  font-weight: 800;
+  font-size: 13px;
+  margin-top: 8px;
+  letter-spacing: .16em;
+}
+.letter {
+  background: #f4e4c4;
+  border: 3px solid var(--ink);
+  padding: 14px 16px 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.letter h3 {
+  margin: 0 0 .5rem;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.letter p { margin: 0 0 .55rem; }
+.letter .sign { text-align: right; font-style: italic; margin: 0; }
+.cover { padding: 0; background: var(--paper); }
+.cover img { width: 100%; height: auto; display: block; }
+.intro {
+  padding: 18px 22px 8px;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.intro h1 { font-weight: 400; font-size: 1.7rem; margin: 0 0 .2rem; }
+.intro p { margin: 0 0 .8rem; color: #444; }
+nav.toc {
+  display: flex; gap: .85rem; flex-wrap: wrap;
+  font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+}
+nav.toc a { color: #6b1c22; }
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .span2, .span3 { grid-column: 1 / -1; }
+  .art img { min-height: 170px; }
+}
+
+.site-nav {
+  font: 800 11px/1.3 "Trebuchet MS", "Gill Sans", sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 8px 2px 10px;
+  color: #c9b48a;
+}
+.site-nav a { color: #f0c94a; text-decoration: none; border-bottom: 1px solid #a07d32; }
+</style>
+</head>
+<body>
+<div class="stage">
+<nav class="site-nav"><a href="/">Comix</a> · <a href="/books/sherlock-holmes/">Sherlock Holmes</a> · A Scandal in Bohemia</nav>
+
+
+<article class="page cover" id="cover">
+  <img src="panels/00-cover.jpg" alt="A Scandal in Bohemia">
+  <div class="intro">
+    <h1>A Scandal in Bohemia</h1>
+    <p>An eight-page digest after Arthur Conan Doyle. Place and time sit on the picture; speech sits under it.</p>
+    <nav class="toc">
+      <a href="#p1">1 Baker Street</a>
+      <a href="#p2">2 The King</a>
+      <a href="#p3">3 The Photograph</a>
+      <a href="#p4">4 The Groom</a>
+      <a href="#p5">5 Fire</a>
+      <a href="#p6">6 Good-night</a>
+      <a href="#p7">7 The Nest Empty</a>
+      <a href="#p8">8 The Woman</a>
+    </nav>
+  </div>
+</article>
+
+<!-- 1 -->
+<article class="page" id="p1">
+  <div class="running"><span>A Scandal in Bohemia</span><span>Baker Street</span></div>
+  <div class="grid">
+
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p1-01.jpg" alt="">
+        <div class="cap">London. 20 March 1888. Baker Street.</div>
+      </div>
+      <figcaption class="talk"><p><b>Watson</b> Holmes is at work again.</p></figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/p1-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> Wedlock suits you, Watson. Seven and a half pounds.</p></figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/p1-03.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> You see, but you do not observe.</p></figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/n-steps.jpg" alt=""></div>
+      <figcaption class="talk">
+        <p><b>Holmes</b> You have seen those stairs hundreds of times. How many are there?</p>
+        <p><b>Watson</b> How many? I don’t know.</p>
+      </figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/p1-04.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> It came by the last post. Read it aloud.</p></figcaption>
+    </figure>
+
+    <div class="letter span2">
+      <h3>Undated, unsigned</h3>
+      <p>There will call upon you to-night, at a quarter to eight o’clock, a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted.</p>
+      <p>Be in your chamber then at that hour, and do not take it amiss if your visitor wear a mask.</p>
+    </div>
+
+  </div>
+  <div class="pageno">1</div>
+</article>
+
+<!-- 2 -->
+<article class="page" id="p2">
+  <div class="running"><span>A Scandal in Bohemia</span><span>The King</span></div>
+  <div class="grid">
+
+    <figure class="panel">
+      <div class="art"><img src="panels/p1-05.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> Bohemian paper. A German. And he prefers a mask.</p></figcaption>
+    </figure>
+
+    <figure class="panel span2">
+      <div class="art">
+        <img src="panels/p1-06.jpg" alt="">
+        <div class="sfx mid">TAP!</div>
+      </div>
+      <figcaption class="talk"><p><b>King</b> You had my note?</p></figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/n-both.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> It is both, or none. You may say before this gentleman anything which you may say to me.</p></figcaption>
+    </figure>
+
+    <figure class="panel span2">
+      <div class="art"><img src="panels/p1-07.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> If your Majesty would condescend to state your case.</p></figcaption>
+    </figure>
+
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p1-08.jpg" alt="">
+        <div class="sfx low">RIP!</div>
+      </div>
+      <figcaption class="talk">
+        <p><b>King</b> I am the King! Why conceal it?</p>
+        <p><b>Holmes</b> Why, indeed? Wilhelm Gottsreich Sigismond von Ormstein, hereditary King of Bohemia.</p>
+      </figcaption>
+    </figure>
+
+  </div>
+  <div class="pageno">2</div>
+</article>
+
+<!-- 3 -->
+<article class="page" id="p3">
+  <div class="running"><span>A Scandal in Bohemia</span><span>The Photograph</span></div>
+  <div class="grid">
+
+    <figure class="panel span2">
+      <div class="art"><img src="panels/p2-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>King</b> Irene Adler. We were both in the photograph.</p></figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/p2-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> Born New Jersey, 1858. Contralto. La Scala. Living in London.</p></figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/p2-03.jpg" alt=""></div>
+      <figcaption class="talk">
+        <p><b>King</b> Letters?</p>
+        <p><b>Holmes</b> Forgery.</p>
+      </figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/p2-04.jpg" alt=""></div>
+      <figcaption class="talk">
+        <p><b>King</b> My photograph.</p>
+        <p><b>Holmes</b> Bought.</p>
+      </figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/p2-05.jpg" alt=""></div>
+      <figcaption class="talk">
+        <p><b>King</b> We were both in it.</p>
+        <p><b>Holmes</b> Oh, dear. That is very bad.</p>
+      </figcaption>
+    </figure>
+
+    <figure class="panel span2">
+      <div class="art"><img src="panels/p2-06.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>King</b> She has a soul of steel. She will send it the day my betrothal is proclaimed.</p></figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/p2-07.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> Then we have three days. Briony Lodge, Serpentine Avenue. You have carte blanche.</p></figcaption>
+    </figure>
+
+  </div>
+  <div class="pageno">3</div>
+</article>
+
+<!-- 4 -->
+<article class="page" id="p4">
+  <div class="running"><span>A Scandal in Bohemia</span><span>The Groom</span></div>
+  <div class="grid">
+
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p2-08.jpg" alt="">
+        <div class="cap">The next afternoon.</div>
+      </div>
+      <figcaption class="talk"><p><b>Watson</b> I had to look three times.</p></figcaption>
+    </figure>
+
+    <figure class="panel span2 wide">
+      <div class="art"><img src="panels/n-norton.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Norton</b> Drive like the devil — first to Gross &amp; Hankey’s, then the Church of St. Monica!</p></figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/n-chase.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> The Church of St. Monica — and half a sovereign if you reach it in twenty minutes.</p></figcaption>
+    </figure>
+
+    <figure class="panel span2 wide">
+      <div class="art">
+        <img src="panels/n-landau.jpg" alt="">
+        <div class="cap">Serpentine Avenue.</div>
+      </div>
+      <figcaption class="talk"><p><b>Irene</b> The Church of St. Monica, John — and half a sovereign if you reach it in twenty minutes!</p></figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/p3-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> I was best man at her wedding. There was an informality about the licence.</p></figcaption>
+    </figure>
+
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p3-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Norton</b> You’ll do! Come — only three minutes or it won’t be legal!</p></figcaption>
+    </figure>
+
+  </div>
+  <div class="pageno">4</div>
+</article>
+
+<!-- 5 -->
+<article class="page" id="p5">
+  <div class="running"><span>A Scandal in Bohemia</span><span>Fire</span></div>
+  <div class="grid">
+
+    <figure class="panel">
+      <div class="art"><img src="panels/p3-03.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> When I raise my hand — so — you will cry Fire.</p></figcaption>
+    </figure>
+
+    <figure class="panel span2 wide">
+      <div class="art">
+        <img src="panels/p3-04.jpg" alt="">
+        <div class="cap">Serpentine Avenue. Dusk.</div>
+        <div class="sfx mid">CRACK!</div>
+      </div>
+      <figcaption class="talk"><p><b>Irene</b> Is the poor gentleman much hurt?</p></figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/n-window.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Watson</b> After all, we are not injuring her. We are but preventing her from injuring another.</p></figcaption>
+    </figure>
+
+    <figure class="panel span2">
+      <div class="art">
+        <img src="panels/p3-05.jpg" alt="">
+        <div class="sfx fire">FIRE!</div>
+      </div>
+    </figure>
+
+    <figure class="panel span3">
+      <div class="art"><img src="panels/p3-06.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> She showed me, as I told you she would. Recess behind the right bell-pull.</p></figcaption>
+    </figure>
+
+  </div>
+  <div class="pageno">5</div>
+</article>
+
+<!-- 6 -->
+<article class="page" id="p6">
+  <div class="running"><span>A Scandal in Bohemia</span><span>Good-night</span></div>
+  <div class="grid">
+
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p3-07.jpg" alt="">
+        <div class="cap">Baker Street. Night.</div>
+      </div>
+      <figcaption class="talk"><p><b>Irene</b> Good-night, Mister Sherlock Holmes.</p></figcaption>
+    </figure>
+
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/n-voice.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> I’ve heard that voice before. Now, I wonder who the deuce that could have been.</p></figcaption>
+    </figure>
+
+  </div>
+  <div class="pageno">6</div>
+</article>
+
+<!-- 7 -->
+<article class="page" id="p7">
+  <div class="running"><span>A Scandal in Bohemia</span><span>The Nest Empty</span></div>
+  <div class="grid">
+
+    <figure class="panel">
+      <div class="art">
+        <img src="panels/p4-01.jpg" alt="">
+        <div class="cap">Morning.</div>
+      </div>
+      <figcaption class="talk"><p><b>King</b> You have really got it!</p></figcaption>
+    </figure>
+
+    <figure class="panel span2">
+      <div class="art"><img src="panels/n-married.jpg" alt=""></div>
+      <figcaption class="talk">
+        <p><b>Holmes</b> Irene Adler is married.</p>
+        <p><b>King</b> Married! When? To whom?</p>
+      </figcaption>
+    </figure>
+
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p4-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Housekeeper</b> My mistress left this morning with her husband by the 5:15 from Charing Cross. Never to return.</p></figcaption>
+    </figure>
+
+    <figure class="panel span3">
+      <div class="art"><img src="panels/p4-03.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> A photograph. And a letter. To be left till called for.</p></figcaption>
+    </figure>
+
+  </div>
+  <div class="pageno">7</div>
+</article>
+
+<!-- 8 -->
+<article class="page" id="p8">
+  <div class="running"><span>A Scandal in Bohemia</span><span>The Woman</span></div>
+  <div class="grid">
+
+    <div class="letter span3">
+      <h3>To be left till called for</h3>
+      <p>My dear Mr Sherlock Holmes,—You really did it very well. You took me in completely. Until after the alarm of fire, I had not a suspicion.</p>
+      <p>I have been trained as an actress myself. Male costume is nothing new to me. I wished you good-night, rather imprudently.</p>
+      <p>As to the photograph, your client may rest in peace. I love and am loved by a better man than he. I keep it only to safeguard myself.</p>
+      <p class="sign">Irene Norton, née Adler</p>
+    </div>
+
+    <figure class="panel span2">
+      <div class="art"><img src="panels/p4-05.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>King</b> What a woman! Would she not have made an admirable queen?</p></figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/p4-06.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> She seems, indeed, to be on a very different level to your Majesty.</p></figcaption>
+    </figure>
+
+    <figure class="panel">
+      <div class="art"><img src="panels/p4-07.jpg" alt=""></div>
+      <figcaption class="talk">
+        <p><b>King</b> This ring—</p>
+        <p><b>Holmes</b> This photograph.</p>
+      </figcaption>
+    </figure>
+
+    <figure class="panel span2">
+      <div class="art"><img src="panels/n-handshake.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Holmes</b> I have the honour to wish you a very good morning.</p></figcaption>
+    </figure>
+
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p4-08.jpg" alt="">
+        <div class="cap">To Sherlock Holmes she is always <em>the</em> woman.</div>
+      </div>
+    </figure>
+
+  </div>
+  <div class="pageno">8</div>
+</article>
+
+</div>
+</body>
+</html>
