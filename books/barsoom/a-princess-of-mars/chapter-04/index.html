@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Princess of Mars — Chapter IV</title>
+<style>
+:root {
+  --ink: #14110e;
+  --paper: #f7f1e4;
+  --cap: #e8b86a;
+  --gutter: 8px;
+  --name: #8b3a1a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #1b1612;
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Gill Sans", "Century Gothic", sans-serif;
+}
+.stage { max-width: 820px; margin: 0 auto; padding: 24px 12px 64px; }
+.page {
+  background: #fff;
+  padding: 14px 14px 18px;
+  margin: 0 0 28px;
+  box-shadow: 0 18px 50px #0008;
+}
+.running {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 11px;
+  margin: 0 0 8px;
+  color: #333;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--gutter);
+  align-items: stretch;
+}
+.panel {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid var(--ink);
+  background: #fff;
+  min-width: 0;
+  min-height: 0;
+}
+.art {
+  position: relative;
+  background: #0d0b09;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+.art img {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  object-position: center 22%;
+  display: block;
+}
+.wide .art img { min-height: 248px; object-position: center 40%; }
+.span2 { grid-column: span 2; }
+.span3 { grid-column: 1 / -1; }
+.cap {
+  position: absolute;
+  top: 8px; left: 8px;
+  background: var(--cap);
+  border: 2px solid var(--ink);
+  padding: 3px 8px 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 12.5px;
+  line-height: 1.25;
+  z-index: 3;
+  max-width: 62%;
+}
+.sfx {
+  position: absolute;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+  font-size: 48px;
+  line-height: .9;
+  color: #fff;
+  -webkit-text-stroke: 5px var(--ink);
+  paint-order: stroke fill;
+  transform: rotate(-9deg);
+  z-index: 5;
+  pointer-events: none;
+  letter-spacing: .02em;
+}
+.sfx.mid { left: 16%; top: 42%; }
+.talk {
+  flex: 0 0 auto;
+  background: #fff;
+  border-top: 2px solid var(--ink);
+  padding: 7px 9px 8px;
+  font-size: 13.5px;
+  line-height: 1.28;
+  font-weight: 700;
+}
+.talk p { margin: 0 0 6px; }
+.talk p:last-child { margin: 0; }
+.talk a { color: var(--name); }
+.talk b {
+  display: block;
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--name);
+  font-weight: 800;
+  margin: 0 0 1px;
+}
+.pageno {
+  text-align: center;
+  font-weight: 800;
+  font-size: 13px;
+  margin-top: 8px;
+  letter-spacing: .16em;
+}
+.cover { padding: 0; background: var(--paper); }
+.cover img { width: 100%; height: auto; display: block; }
+.intro {
+  padding: 18px 22px 8px;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.intro h1 { font-weight: 400; font-size: 1.7rem; margin: 0 0 .2rem; }
+.intro p { margin: 0 0 .8rem; color: #444; }
+.intro a { color: #8b3a1a; }
+.site-nav {
+  font: 800 11px/1.3 "Trebuchet MS", "Gill Sans", sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 8px 2px 10px;
+  color: #c9b48a;
+}
+.site-nav a { color: #e8b86a; text-decoration: none; border-bottom: 1px solid #a07d32; }
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .span2, .span3 { grid-column: 1 / -1; }
+  .art img { min-height: 170px; }
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<nav class="site-nav"><a href="/">Comix</a> · <a href="/books/barsoom/">Barsoom</a> · A Princess of Mars · Chapter IV</nav>
+
+<article class="page cover" id="cover">
+  <img src="panels/00-cover.jpg" alt="A Princess of Mars, Chapter IV">
+  <div class="intro">
+    <h1>Chapter IV · A Prisoner</h1>
+    <p>A ten-page digest of Edgar Rice Burroughs, 1912. The dead city, the punch, and a word that means jump. Speech under the pictures; the sound stays in the frame. Text from <a href="https://gutenberg.org/cache/epub/62/pg62-images.html#chap04">Project Gutenberg #62</a>.</p>
+  </div>
+</article>
+
+<article class="page" id="p1">
+  <div class="running"><span>A Princess of Mars</span><span>The Dead Sea Bottom</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p1-01.jpg" alt="">
+        <div class="cap">Ten miles. The ground rises.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> We were nearing the edge of one of Mars’ long-dead seas. A narrow gorge opened into a valley, and at its far extremity I beheld an enormous city.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">1</div>
+</article>
+
+<article class="page" id="p2">
+  <div class="running"><span>A Princess of Mars</span><span>The Empty Palaces</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p1-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> A ruined roadway ended in a flight of broad steps. The buildings were deserted, and had the appearance of not having been tenanted for ages.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">2</div>
+</article>
+
+<article class="page" id="p3">
+  <div class="running"><span>A Princess of Mars</span><span>The Plaza</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p2-01.jpg" alt="">
+        <div class="cap">Nine or ten hundred of them.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> Upon the plaza and in the buildings around it were camped some nine or ten hundred creatures of the same breed as my captors.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">3</div>
+</article>
+
+<article class="page" id="p4">
+  <div class="running"><span>A Princess of Mars</span><span>The Audience</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p3-01.jpg" alt="">
+        <div class="cap">White marble inlaid with gold.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> The desks and chairs were of a size adapted to human beings such as I. The Martians could scarcely have squeezed into them. Another race had built this hall.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">4</div>
+</article>
+
+<article class="page" id="p5">
+  <div class="running"><span>A Princess of Mars</span><span>Tars Tarkas</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p4-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> My captor, whose name was Tars Tarkas, was virtually the vice-chieftain. I replied in English. When I smiled, the chieftain did likewise.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">5</div>
+</article>
+
+<article class="page" id="p6">
+  <div class="running"><span>A Princess of Mars</span><span>A Gentleman’s Reply</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p5-01.jpg" alt="">
+        <div class="sfx mid">POW!</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> He banged me down upon my feet, his face bent close to mine. I swung my fist squarely to his jaw and he went down like a felled ox.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">6</div>
+</article>
+
+<article class="page" id="p7">
+  <div class="running"><span>A Princess of Mars</span><span>Sak</span></div>
+  <div class="grid">
+    <figure class="panel">
+      <div class="art"><img src="panels/p6-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Tars Tarkas</b> Sak! Sak!</p></figcaption>
+    </figure>
+    <figure class="panel span2">
+      <div class="art"><img src="panels/p6-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> I “sakked” a good hundred and fifty feet, and landed squarely upon my feet.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">7</div>
+</article>
+
+<article class="page" id="p8">
+  <div class="running"><span>A Princess of Mars</span><span>Consideration</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p7-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> They ordered a repetition. I ignored them, and each time motioned to my mouth and rubbed my stomach.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">8</div>
+</article>
+
+<article class="page" id="p9">
+  <div class="running"><span>A Princess of Mars</span><span>Sola</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p8-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> A young female, about eight feet tall, light olive-green. Her name, as I afterward learned, was Sola. She belonged to the retinue of Tars Tarkas.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">9</div>
+</article>
+
+<article class="page" id="p10">
+  <div class="running"><span>A Princess of Mars</span><span>To Be Continued</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p9-01.jpg" alt="">
+        <div class="cap">The sleeping chamber.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> It waddled in on its ten short legs and squatted like an obedient puppy. The size of a Shetland pony; a frog’s head; three rows of tusks.</p></figcaption>
+    </figure>
+    <figure class="panel span3">
+      <div class="art"><img src="panels/p10-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Next</b> Chapter V — I Elude My Watch Dog.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">10</div>
+</article>
+
+<p class="site-nav"><a href="/books/barsoom/a-princess-of-mars/chapter-03/">Chapter III</a> · <a href="/books/barsoom/a-princess-of-mars/">A Princess of Mars</a> · Chapter V next</p>
+
+</div>
+</body>
+</html>
