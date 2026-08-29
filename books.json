@@ -19,6 +19,20 @@
           "path": "/books/sherlock-holmes/the-red-headed-league/"
         }
       ]
+    },
+    {
+      "id": "barsoom",
+      "title": "Barsoom",
+      "author": "Edgar Rice Burroughs",
+      "path": "/books/barsoom/",
+      "stories": [
+        {
+          "id": "a-princess-of-mars",
+          "title": "A Princess of Mars",
+          "pages": 8,
+          "path": "/books/barsoom/a-princess-of-mars/"
+        }
+      ]
     }
   ]
 }

@@ -12,6 +12,10 @@ books/
       index.html
       panels/
     the-red-headed-league/
+  barsoom/                         ← the Martian novels
+    index.html
+    a-princess-of-mars/
+      chapter-01/
   another-author/                  ← the next book
 ```
 
