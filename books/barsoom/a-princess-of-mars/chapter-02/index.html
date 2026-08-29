@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Princess of Mars — Chapter II</title>
+<style>
+:root {
+  --ink: #14110e;
+  --paper: #f7f1e4;
+  --cap: #e8b86a;
+  --gutter: 8px;
+  --name: #8b3a1a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #1b1612;
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Gill Sans", "Century Gothic", sans-serif;
+}
+.stage { max-width: 820px; margin: 0 auto; padding: 24px 12px 64px; }
+.page {
+  background: #fff;
+  padding: 14px 14px 18px;
+  margin: 0 0 28px;
+  box-shadow: 0 18px 50px #0008;
+}
+.running {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 11px;
+  margin: 0 0 8px;
+  color: #333;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--gutter);
+  align-items: stretch;
+}
+.panel {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid var(--ink);
+  background: #fff;
+  min-width: 0;
+  min-height: 0;
+}
+.art {
+  position: relative;
+  background: #0d0b09;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+.art img {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  object-position: center 22%;
+  display: block;
+}
+.wide .art img { min-height: 248px; object-position: center 40%; }
+.span2 { grid-column: span 2; }
+.span3 { grid-column: 1 / -1; }
+.cap {
+  position: absolute;
+  top: 8px; left: 8px;
+  background: var(--cap);
+  border: 2px solid var(--ink);
+  padding: 3px 8px 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 12.5px;
+  line-height: 1.25;
+  z-index: 3;
+  max-width: 62%;
+}
+.sfx {
+  position: absolute;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+  font-size: 48px;
+  line-height: .9;
+  color: #fff;
+  -webkit-text-stroke: 5px var(--ink);
+  paint-order: stroke fill;
+  transform: rotate(-9deg);
+  z-index: 5;
+  pointer-events: none;
+  letter-spacing: .02em;
+}
+.sfx.mid { left: 16%; top: 42%; }
+.sfx.low { left: 10%; bottom: 16%; font-size: 56px; }
+.sfx.moan {
+  left: 18%; top: 38%;
+  font-size: 42px;
+  transform: rotate(-6deg);
+  color: #c9b48a;
+}
+.talk {
+  flex: 0 0 auto;
+  background: #fff;
+  border-top: 2px solid var(--ink);
+  padding: 7px 9px 8px;
+  font-size: 13.5px;
+  line-height: 1.28;
+  font-weight: 700;
+}
+.talk p { margin: 0 0 6px; }
+.talk p:last-child { margin: 0; }
+.talk a { color: var(--name); }
+.talk b {
+  display: block;
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--name);
+  font-weight: 800;
+  margin: 0 0 1px;
+}
+.pageno {
+  text-align: center;
+  font-weight: 800;
+  font-size: 13px;
+  margin-top: 8px;
+  letter-spacing: .16em;
+}
+.cover { padding: 0; background: var(--paper); }
+.cover img { width: 100%; height: auto; display: block; }
+.intro {
+  padding: 18px 22px 8px;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.intro h1 { font-weight: 400; font-size: 1.7rem; margin: 0 0 .2rem; }
+.intro p { margin: 0 0 .8rem; color: #444; }
+.intro a { color: #8b3a1a; }
+.site-nav {
+  font: 800 11px/1.3 "Trebuchet MS", "Gill Sans", sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 8px 2px 10px;
+  color: #c9b48a;
+}
+.site-nav a { color: #e8b86a; text-decoration: none; border-bottom: 1px solid #a07d32; }
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .span2, .span3 { grid-column: 1 / -1; }
+  .art img { min-height: 170px; }
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<nav class="site-nav"><a href="/">Comix</a> · <a href="/books/barsoom/">Barsoom</a> · A Princess of Mars · Chapter II</nav>
+
+<article class="page cover" id="cover">
+  <img src="panels/00-cover.jpg" alt="A Princess of Mars, Chapter II">
+  <div class="intro">
+    <h1>Chapter II · The Escape of the Dead</h1>
+    <p>An eight-page digest of Edgar Rice Burroughs, 1912. The Arizona cave, and the red star that will not let him go. Speech under the pictures; the sound stays in the frame. Text from <a href="https://gutenberg.org/cache/epub/62/pg62-images.html#chap02">Project Gutenberg #62</a>.</p>
+  </div>
+</article>
+
+<article class="page" id="p1">
+  <div class="running"><span>A Princess of Mars</span><span>Turned to Stone</span></div>
+  <div class="grid">
+    <figure class="panel span2">
+      <div class="art">
+        <img src="panels/p1-01.jpg" alt="">
+        <div class="cap">The Arizona cave. Morning.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> A sense of delicious dreaminess overcame me. Then horses. I attempted to spring to my feet.</p></figcaption>
+    </figure>
+    <figure class="panel">
+      <div class="art"><img src="panels/p1-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> My muscles refused to respond. I was as unable to move as though turned to stone.</p></figcaption>
+    </figure>
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p1-03.jpg" alt="">
+        <div class="cap">The opening. Daylight.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> A slight vapor filled the cave. A faintly pungent odor. Some poisonous gas — and yet I was thoroughly awake.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">1</div>
+</article>
+
+<article class="page" id="p2">
+  <div class="running"><span>A Princess of Mars</span><span>The Faces</span></div>
+  <div class="grid">
+    <figure class="panel">
+      <div class="art"><img src="panels/p2-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> A war-bonneted, paint-streaked face was thrust around the shoulder of the cliff.</p></figcaption>
+    </figure>
+    <figure class="panel span2">
+      <div class="art"><img src="panels/p2-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> A third and fourth and fifth, craning their necks. Each face was the picture of awe and fear.</p></figcaption>
+    </figure>
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p2-03.jpg" alt="">
+        <div class="sfx moan">OOOH—</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> A low but distinct moaning sound issued from the recesses of the cave behind me.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">2</div>
+</article>
+
+<article class="page" id="p3">
+  <div class="running"><span>A Princess of Mars</span><span>Stampede</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p3-01.jpg" alt="">
+        <div class="sfx low">THUD!</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> They turned and fled in terror. One of the braves was hurled headlong from the cliff to the rocks below.</p></figcaption>
+    </figure>
+    <figure class="panel span3">
+      <div class="art"><img src="panels/p3-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> Paralyzed, with my back toward some horrible and unknown danger. The last word in fearsome predicaments.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">3</div>
+</article>
+
+<article class="page" id="p4">
+  <div class="running"><span>A Princess of Mars</span><span>The Silence of the Dead</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p4-01.jpg" alt="">
+        <div class="cap">Late afternoon.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> My horse started slowly down the trail. I was left alone with my unknown companion and the dead body of my friend.</p></figcaption>
+    </figure>
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p4-02.jpg" alt="">
+        <div class="cap">Midnight.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> From then until possibly midnight all was silence, the silence of the dead. Then the awful moan of the morning.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">4</div>
+</article>
+
+<article class="page" id="p5">
+  <div class="running"><span>A Princess of Mars</span><span>The Snap</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p5-01.jpg" alt="">
+        <div class="sfx mid">SNAP!</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> Something gave. A sharp click as of the snapping of a steel wire. And I stood. There before me lay my own body.</p></figcaption>
+    </figure>
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p5-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> I lay clothed — and yet here I stood naked as at the minute of my birth. Is this then death? I could feel my heart pounding.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">5</div>
+</article>
+
+<article class="page" id="p6">
+  <div class="running"><span>A Princess of Mars</span><span>Arizona Night</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p6-01.jpg" alt="">
+        <div class="cap">The ledge. Starlight.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> I leaped through the opening into the starlight of a clear Arizona night. Stretching far below me, a miracle of soft splendor.</p></figcaption>
+    </figure>
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p6-02.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> My attention was riveted by a large red star close to the distant horizon. Mars, the god of war.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">6</div>
+</article>
+
+<article class="page" id="p7">
+  <div class="running"><span>A Princess of Mars</span><span>The God of My Vocation</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art"><img src="panels/p7-01.jpg" alt=""></div>
+      <figcaption class="talk"><p><b>Carter</b> It seemed to call across the unthinkable void, to lure me to it, to draw me as the lodestone attracts a particle of iron.</p></figcaption>
+    </figure>
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p7-02.jpg" alt="">
+        <div class="sfx mid">WHOOSH!</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> I closed my eyes, stretched out my arms toward the god of my vocation, and felt myself drawn with the suddenness of thought through the trackless immensity of space.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">7</div>
+</article>
+
+<article class="page" id="p8">
+  <div class="running"><span>A Princess of Mars</span><span>To Be Continued</span></div>
+  <div class="grid">
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p7-02.jpg" alt="">
+        <div class="cap">Utter darkness.</div>
+      </div>
+      <figcaption class="talk"><p><b>Carter</b> There was an instant of extreme cold and utter darkness.</p></figcaption>
+    </figure>
+    <figure class="panel span3 wide">
+      <div class="art">
+        <img src="panels/p8-01.jpg" alt="">
+        <div class="cap">Barsoom.</div>
+      </div>
+      <figcaption class="talk"><p><b>Next</b> Chapter III — My Advent on Mars.</p></figcaption>
+    </figure>
+  </div>
+  <div class="pageno">8</div>
+</article>
+
+<p class="site-nav"><a href="/books/barsoom/a-princess-of-mars/chapter-01/">Chapter I</a> · <a href="/books/barsoom/a-princess-of-mars/">A Princess of Mars</a> · Chapter III next</p>
+
+</div>
+</body>
+</html>
